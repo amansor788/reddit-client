@@ -3,14 +3,26 @@ import {connect} from 'react-redux';
 import {fetchPosts} from '../actions';
 
 import RedditListItem from './RedditListItem';
+import '../css/RedditListItem.css';
 
-class RedditList extends React.Component {    
+class RedditList extends React.Component { 
+  componentDidMount(){
+    this.props.fetchPosts();
+  }
+
+  renderList = () => {
+    // console.log(this.props.posts);
+    return this.props.posts.map(post => {
+      return <RedditListItem key={post.data.id} post={post.data} />
+    })
+  }
+
 
   render(){
     return (
-      <div className="ui relaxed divided list">
+      <div className="ui relaxed divided list reddit-general-item">
         <h3>Reddit Posts</h3>
-        <RedditListItem />
+        {this.renderList()}
       </div>
     )
   }

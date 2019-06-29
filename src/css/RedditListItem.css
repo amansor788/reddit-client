@@ -1,0 +1,13 @@
+.reddit-item {
+  display: flex !important;
+  align-items: center;
+  cursor: pointer;
+}
+
+.reddit-general-item {
+  background-color: black;
+  color: white;
+  align-items: center;
+}
+
+

@@ -2,13 +2,20 @@ import {FETCH_POST, FETCH_POSTS} from './types';
 import posts from '../apis/posts';
 
 export const fetchPosts = () => async dispatch => {
- const response = await posts.get('/posts');
+  const response = await posts.get('/top/.json?limit=50');
+ 
+  dispatch(
+    {
+      type: FETCH_POSTS, 
+      payload: response.data.data.children
+    });
+ }
 
- dispatch({type: FETCH_POSTS, payload: response.data});
-}
+export const fetchPost = (id) => {
+  const request = posts.get(`posts/${id}`);
 
-export const fetchPost = (id) => async dispatch => {
-  const response = await posts.get(`posts/${id}`);
-
-  dispatch({type: FETCH_POST, payload: response.data});
+  return {
+    type: FETCH_POST,
+    payload: request
+  };
 }

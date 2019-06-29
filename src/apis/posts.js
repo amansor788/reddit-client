@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://www.reddit.com/api'}
+  baseURL: 'https://www.reddit.com'}
 );

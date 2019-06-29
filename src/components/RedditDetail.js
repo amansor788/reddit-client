@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RedditDetail = ( {post} ) => {
-  if (!post) { return <div>Loading...</div>}  
+  if (!post) { return <div>Please select a post to show...</div>}  
   
   const redditSrc = '++TODO: url reddit selected post';
 
