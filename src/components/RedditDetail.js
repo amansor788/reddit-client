@@ -1,17 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const RedditDetail = ( {post} ) => {
-  if (!post) { return <div>Please select a post to show...</div>}  
+import { getPostSelector } from '../reducers/selectReducer';
+
+class RedditDetail extends React.Component {
+  render(){
+    const { post } = this.props;
+
+    if (!post) { return <div>Please select a post to show...</div>}  
   
-  //const redditSrc = '++TODO: url reddit selected post';
-
-  return (
-    <div>
-      <div className="ui embed">
-         RedditDetail Component
+    return (
+      <div>
+        <div className="ui embed">
+           <h2>{post.author}</h2>
+           <img src={post.thumbnail} alt="alt"/>
+           <p>{post.title}</p>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 };
 
-export default RedditDetail;
+const mapStateToProps = (state) => {
+  return {
+    post: getPostSelector(state),
+  };
+}
+
+export default connect(mapStateToProps) (RedditDetail);

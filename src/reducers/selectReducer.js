@@ -8,3 +8,11 @@ export default (state='', action) => {
       return state;
   }
 }
+
+// Selector
+export const getPostSelector = (state) => {
+  const postFound = state.posts.find((post) => {
+    return post.data.id === state.selectedPostId});
+
+  return postFound ? postFound.data: null;
+};
