@@ -1,4 +1,4 @@
-import {FETCH_POST, FETCH_POSTS, SELECT_POST} from './types';
+import {FETCH_POST, FETCH_POSTS, SELECT_POST, DISMISS_POST} from './types';
 import posts from '../apis/posts';
 
 export const fetchPosts = () => async dispatch => {
@@ -16,6 +16,13 @@ export const fetchPosts = () => async dispatch => {
       type: SELECT_POST, 
       payload: id
     }
+ }
+
+ export const dismissPost = (id) => {
+   return {
+     type: DISMISS_POST,
+     payload: id
+   }
  }
 
 

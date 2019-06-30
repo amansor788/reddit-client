@@ -3,7 +3,7 @@ import moment from 'moment';
 import {connect} from 'react-redux';
 
 import '../css/RedditListItem.css';
-import { selectPost } from '../actions';
+import { selectPost, dismissPost } from '../actions';
 
 class RedditListItem extends React.Component {
   
@@ -25,12 +25,15 @@ class RedditListItem extends React.Component {
            </div>
        </div>      
        <div>
-         <button>Dismiss Post</button>
-         {post.num_comments} comments
+        <button className="ui compact basic olive button tiny" onClick={() => {this.props.dismissPost(post.id)}}>
+          <i className="icon close"></i>
+            Dismis Post
+        </button>
+        {post.num_comments} comments
        </div>
       </div>
    )
   }
 }
 
-export default connect(null, { selectPost }) (RedditListItem);
+export default connect(null, { selectPost, dismissPost }) (RedditListItem);

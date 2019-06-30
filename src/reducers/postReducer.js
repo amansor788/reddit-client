@@ -1,4 +1,4 @@
-import {FETCH_POST, FETCH_POSTS} from '../actions/types';
+import {FETCH_POST, FETCH_POSTS, DISMISS_POST} from '../actions/types';
 
 export default (state=[], action) => {
   switch (action.type) {
@@ -6,6 +6,11 @@ export default (state=[], action) => {
       return action.payload;
     case FETCH_POST:
       return {...state, [action.payload.id]: action.payload};
+    case DISMISS_POST:
+      const newState = state.filter((post) => {
+        return post.data.id !== action.payload
+      });
+      return newState;
     default:
       return state;
   }

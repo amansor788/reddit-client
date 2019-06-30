@@ -9,10 +9,10 @@ class App extends React.Component {
       <div className="ui container">
         <div className="ui grid">
           <div className="ui row">
-            <div className="five wide column">
+            <div className="seven wide column">
               <RedditList />
             </div>
-            <div className="eleven wide column">
+            <div className="nine wide column">
               <RedditDetail />
             </div>
           </div>
