@@ -1,4 +1,4 @@
-import {FETCH_POST, FETCH_POSTS} from './types';
+import {FETCH_POST, FETCH_POSTS, SELECT_POST} from './types';
 import posts from '../apis/posts';
 
 export const fetchPosts = () => async dispatch => {
@@ -10,6 +10,14 @@ export const fetchPosts = () => async dispatch => {
       payload: response.data.data.children
     });
  }
+
+ export const selectPost = (id) => {
+   return {
+      type: SELECT_POST, 
+      payload: id
+    }
+ }
+
 
 export const fetchPost = (id) => {
   const request = posts.get(`posts/${id}`);

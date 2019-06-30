@@ -3,7 +3,7 @@ import React from 'react';
 const RedditDetail = ( {post} ) => {
   if (!post) { return <div>Please select a post to show...</div>}  
   
-  const redditSrc = '++TODO: url reddit selected post';
+  //const redditSrc = '++TODO: url reddit selected post';
 
   return (
     <div>

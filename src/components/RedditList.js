@@ -11,7 +11,6 @@ class RedditList extends React.Component {
   }
 
   renderList = () => {
-    // console.log(this.props.posts);
     return this.props.posts.map(post => {
       return <RedditListItem key={post.data.id} post={post.data} />
     })
