@@ -13,7 +13,11 @@ class RedditDetail extends React.Component {
       <div>
         <div className="ui cust">
            <h2>{post.author}</h2>
-           <img src={post.thumbnail.includes('https://') ? post.thumbnail : 'favicon.ico'} alt="alt"/>
+           <a href={post.url} target="_blank">
+            <img 
+                src={post.thumbnail.includes('https://') ? post.thumbnail : 'favicon.ico'} 
+                alt="alt"/>
+            </a>
            <p>{post.title}</p>
         </div>
       </div>
