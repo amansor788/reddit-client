@@ -12,7 +12,7 @@ class App extends React.Component {
             <div className="seven wide column">
               <RedditList />
             </div>
-            <div className="nine wide column">
+            <div className="nine wide column fixed">
               <RedditDetail />
             </div>
           </div>

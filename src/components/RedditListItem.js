@@ -7,7 +7,6 @@ import { selectPost, dismissPost } from '../actions';
 
 class RedditListItem extends React.Component {
   
-  //console.log(post);
   render(){
     const { post } = this.props;
 

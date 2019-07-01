@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchPosts} from '../actions';
 
 import RedditListItem from './RedditListItem';
+import Paginator from './Paginator';
 import '../css/RedditListItem.css';
 
 class RedditList extends React.Component { 
@@ -21,6 +22,7 @@ class RedditList extends React.Component {
     return (
       <div className="ui relaxed divided list reddit-general-item">
         <h3>Reddit Posts</h3>
+        <Paginator />
         {this.renderList()}
       </div>
     )
