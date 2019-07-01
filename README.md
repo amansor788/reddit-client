@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Author Notes
+
+* Semantic-UI CDN + Css Custom File
+* React and Redux (no state-level components!)
+* Top 50 Reddit post that update when site refreshed. 
+* Unread/Read Post + Dismiss Post + Dismiss All renewable when site refreshed (no permanent data).
+* All State-handle logic inside reducers, including SELECTOR to get selected post object from selected post ID.
+* CLick image on Post shown (right panel) to access to original fullsize image .
+* Post with no thumbnail represented with React icon.
+
 ## Available Scripts
 
 In the project directory, you can run:
