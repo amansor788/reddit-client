@@ -6,18 +6,14 @@ import RedditDetail from './RedditDetail';
 class App extends React.Component {
   render(){
     return (
-      <div className="ui container">
-        <div className="ui grid">
-          <div className="ui row">
-            <div className="seven wide column">
+        <div className="ui padded grid cust">
+            <div className="seven wide column cust">
               <RedditList />
             </div>
-            <div className="nine wide column fixed">
+            <div className="nine wide column cust">
               <RedditDetail />
             </div>
-          </div>
         </div>
-      </div>
     )
   }
 }

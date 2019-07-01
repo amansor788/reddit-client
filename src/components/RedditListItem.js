@@ -28,7 +28,7 @@ class RedditListItem extends React.Component {
        <div>
         <button className="ui compact basic olive button tiny" onClick={() => {this.props.dismissPost(post.id)}}>
           <i className="icon close"></i>
-            Dismis Post
+            Dismiss Post
         </button>
         {post.num_comments} comments
        </div>

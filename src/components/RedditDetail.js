@@ -11,7 +11,7 @@ class RedditDetail extends React.Component {
   
     return (
       <div>
-        <div className="ui embed">
+        <div className="ui cust">
            <h2>{post.author}</h2>
            <img src={post.thumbnail} alt="alt"/>
            <p>{post.title}</p>

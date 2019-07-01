@@ -1,4 +1,4 @@
-import {FETCH_POST, FETCH_POSTS, SELECT_POST, DISMISS_POST} from './types';
+import {FETCH_POST, FETCH_POSTS, SELECT_POST, DISMISS_POST, DISMISS_ALL} from './types';
 import posts from '../apis/posts';
 
 export const fetchPosts = () => async dispatch => {
@@ -25,6 +25,11 @@ export const fetchPosts = () => async dispatch => {
    }
  }
 
+ export const dismissAll = () => {
+  return {
+    type: DISMISS_ALL,
+  }
+}
 
 export const fetchPost = (id) => {
   const request = posts.get(`posts/${id}`);

@@ -1,4 +1,4 @@
-import {FETCH_POST, FETCH_POSTS, DISMISS_POST, SELECT_POST} from '../actions/types';
+import {FETCH_POST, FETCH_POSTS, DISMISS_POST, SELECT_POST, DISMISS_ALL} from '../actions/types';
 
 export default (state=[], action) => {
   let newState;
@@ -15,6 +15,8 @@ export default (state=[], action) => {
         return post.data.id !== action.payload
       });
       return newState;
+    case DISMISS_ALL:
+      return [];
     default:
       return state;
   }

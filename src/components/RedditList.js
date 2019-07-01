@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchPosts} from '../actions';
+import {fetchPosts, dismissAll} from '../actions';
 
 import RedditListItem from './RedditListItem';
-import Paginator from './Paginator';
+//import Paginator from './Paginator';
 import '../css/RedditListItem.css';
 
 class RedditList extends React.Component { 
@@ -19,10 +19,19 @@ class RedditList extends React.Component {
 
   render(){
     return (
-      <div className="ui relaxed divided list reddit-general-item">
-        <h3>Reddit Posts</h3>
-        <Paginator />
-        {this.renderList()}
+      <div className="reddit-general-item cust">
+        <div className="list-header">
+          <h3>Reddit Posts</h3>
+          {/* <Paginator /> */}
+        </div>
+        <div className="ui relaxed divided list scroll-list">
+          {this.renderList()}
+        </div>
+        <div className="list-footer">
+          <button className="ui compact basic olive button tiny" onClick={() => {this.props.dismissAll()}}>
+              Dismiss All
+          </button>
+        </div>
       </div>
     )
   }
@@ -34,4 +43,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, {fetchPosts}) (RedditList);
+export default connect(mapStateToProps, {fetchPosts, dismissAll}) (RedditList);
