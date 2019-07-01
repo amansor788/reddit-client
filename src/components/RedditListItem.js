@@ -15,11 +15,12 @@ class RedditListItem extends React.Component {
        <div className="paddle">
          <i className={`bullseye icon ${post.visited ? `grey` : `blue`}`}></i>
          {post.visited}
-         <strong>{post.author}</strong> {moment(post).fromNow()}
+         <span className="user">{post.author}</span> 
+         <span className="time-ago">{moment(post).fromNow()}</span>
        </div>
        <div className="reddit-item paddle">   
           <img src={post.thumbnail.includes('https://') ? post.thumbnail : 'favicon.ico'} alt="alt" />
-          {post.title}
+          <span className="title">{post.title}</span>
        </div>      
        <div>
         <button className="ui compact basic orange button tiny" onClick={() => {this.props.dismissPost(post.id)}}>

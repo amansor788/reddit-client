@@ -24,6 +24,19 @@
   color: orange;
 }
 
+.time-ago{
+  float: right;
+  font-size: 0.8em;
+}
+
+.user{
+  font-size:1.3em;
+}
+
+.title{
+  font-size:0.8em;
+}
+
 
 
 
