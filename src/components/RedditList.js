@@ -17,7 +17,6 @@ class RedditList extends React.Component {
     })
   }
 
-
   render(){
     return (
       <div className="ui relaxed divided list reddit-general-item">

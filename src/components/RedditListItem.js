@@ -9,10 +9,12 @@ class RedditListItem extends React.Component {
   
   render(){
     const { post } = this.props;
-
+    
     return(
       <div className="item" onClick={() => {this.props.selectPost(post.id)}}>
        <div>
+         <i className={`bullseye icon ${post.visited ? `grey` : `orange`}`}></i>
+         {post.visited}
          <strong>{post.author}</strong> {moment(post).fromNow()}
        </div>
        <div className="item reddit-item">   
