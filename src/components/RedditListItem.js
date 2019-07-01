@@ -12,25 +12,21 @@ class RedditListItem extends React.Component {
     
     return(
       <div className="item" onClick={() => {this.props.selectPost(post.id)}}>
-       <div>
-         <i className={`bullseye icon ${post.visited ? `grey` : `orange`}`}></i>
+       <div className="paddle">
+         <i className={`bullseye icon ${post.visited ? `grey` : `blue`}`}></i>
          {post.visited}
          <strong>{post.author}</strong> {moment(post).fromNow()}
        </div>
-       <div className="item reddit-item">   
-           <div className="ui tiny image">
-             <img src={post.thumbnail} alt="alt" />
-           </div>
-           <div className="content">
-               {post.title}
-           </div>
+       <div className="reddit-item paddle">   
+          <img src={post.thumbnail.includes('https://') ? post.thumbnail : 'favicon.ico'} alt="alt" />
+          {post.title}
        </div>      
        <div>
-        <button className="ui compact basic olive button tiny" onClick={() => {this.props.dismissPost(post.id)}}>
+        <button className="ui compact basic orange button tiny" onClick={() => {this.props.dismissPost(post.id)}}>
           <i className="icon close"></i>
             Dismiss Post
         </button>
-        {post.num_comments} comments
+        <span className="comment">{post.num_comments} comments</span>
        </div>
       </div>
    )

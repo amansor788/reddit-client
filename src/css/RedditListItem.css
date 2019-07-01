@@ -1,12 +1,30 @@
 .reddit-item {
   display: flex !important;
-  align-items: center;
+  align-items: center !important;
   cursor: pointer;
 }
 
+.reddit-item img {
+  width: 60px;
+  height: auto;
+  padding-right: 1em;
+}
+
 .reddit-general-item {
-  background-color: rgb(103, 103, 112);
+  background-color: black;
   color: white;
 }
+
+.paddle{
+  padding-bottom: 0.5em;
+}
+
+.comment{
+  float: right;
+  color: orange;
+}
+
+
+
 
 
